@@ -16,12 +16,25 @@ const app = new Vue(
                     text: 'Fare il bucato',
                     done: false
                 }
-            ]
+            ],
+
+            newTask : ""
         },
 
         methods : {
+
             removeTaskItem : function(itemIndex){
-                this.todos.splice(itemIndex, 1) //Remove only 1 element from index position itemIndex
+                this.todos.splice(itemIndex, 1); //Remove only 1 element from index position itemIndex
+            },
+
+            addNewTaskItem : function(taskText){
+                const taskItem = {
+                    text : taskText,
+                    done : false
+                }
+
+                this.todos.push(taskItem);
+                this.newTask = "";
             }
         }
     }
