@@ -35,6 +35,10 @@ const app = new Vue(
 
                 this.todos.push(taskItem);
                 this.newTask = "";
+            },
+
+            invertDoneStatus : function(itemIndex){
+                this.todos[itemIndex].done = !this.todos[itemIndex].done;
             }
         }
     }
