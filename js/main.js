@@ -17,6 +17,12 @@ const app = new Vue(
                     done: false
                 }
             ]
+        },
+
+        methods : {
+            removeTaskItem : function(itemIndex){
+                this.todos.splice(itemIndex, 1) //Remove only 1 element from index position itemIndex
+            }
         }
     }
 )
