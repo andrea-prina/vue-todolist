@@ -26,7 +26,7 @@
         <div class="ms_container mt-4">
             <h1 class="text-light bg-primary text-center fw-bolder m-0">ToDo List</h1>
             <ul class="list-group">
-                <li v-for="(task, index) in todos" class="list-group-item rounded-0":class="{'text-decoration-line-through': task.done}" @click="invertDoneStatus(index)"> <a @click.prevent="removeTaskItem(index)" href="#" class="me-4"><i class="fa-solid fa-xmark"></i></a> {{ task.text }} </li>
+                <li v-for="(task, index) in todos" class="list-group-item rounded-0":class="{'text-decoration-line-through': task.done}"> <a @click.prevent="removeTaskItem(index)" href="#" class="me-4"><i class="fa-solid fa-xmark"></i></a> <span @click="invertDoneStatus(index)">{{ task.text }}</span> </li>
             </ul>
             <div class="input-group mb-3 rounded-0">
                 <input type="text" v-model="newTask" @keyup.enter="addNewTaskItem(newTask)" class="form-control rounded-0" placeholder="Add another element" aria-label="Add another element" aria-describedby="basic-addon2">
