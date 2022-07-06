@@ -29,7 +29,7 @@
                 <li v-for="(task, index) in todos" class="list-group-item rounded-0":class="{'text-decoration-line-through': task.done}"> <a @click.prevent="removeTaskItem(index)" href="#" class="me-4"><i class="fa-solid fa-xmark"></i></a> {{ task.text }} </li>
             </ul>
             <div class="input-group mb-3 rounded-0">
-                <input type="text" v-model="newTask" class="form-control rounded-0" placeholder="Add another element" aria-label="Add another element" aria-describedby="basic-addon2">
+                <input type="text" v-model="newTask" @keyup.enter="addNewTaskItem(newTask)" class="form-control rounded-0" placeholder="Add another element" aria-label="Add another element" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button @click="addNewTaskItem(newTask)" class="btn btn-outline-secondary rounded-0" type="button">Add</button>
                 </div>
